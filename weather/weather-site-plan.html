@@ -1,109 +1,128 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Weather Site Plan</title>
-        <meta name="viewport" content="width=device-width">
-        <meta name="author" content="Harmony Durfee">
-        <meta name="description" content="This site is a weather site plan">
-    </head>
-    <body>
-        <header>Weather Site Plan</header>
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="franklin-weather.html">Franklin Weather Site</a>
-        </nav>
-    <main>
-        <section id="purpose">
-            <h1>Purpose</h1>
-            <p>The purpose of <strong><em>The Weather Site</em></strong> is to give current weather conditions in 3 different ways. The initial page will give the weather for the current location based on the Geocoding location information from the device. The second is weather for 3 specific locations accessible through a dedicated link, and the third is weather for any location determined by a search string.</p>
-        </section>
-        <section id="audience">
-            <h1>Audience</h1>
-            <p>Primary audience is adults ages 18-30.  Most will be students.  Access to the site will be split between mobile devices and laptops. A secondary audience will be anyone interested in weather.</p>
-            <section id="audience-goals">
-                <h2>Audience Goals</h2>
-                <p>College students move around quite a bit so one goal would be to quickly get the weather conditions for their
-                    current location as they head off to class or study. They are also often far from their homes so the ability to
-                    quickly get the conditions for a specific location is important as well. The third goal deals with planning for
-                    travels...the ability to get weather conditions for any location will help with last minute packing for road
-                    trips.</p>
-            </section>
-            <section id="persona">
-                <h2>Persona</h2>
-                <img src="images/cool-joe.jpg" alt="Picture of Joe Cool">
-                <ul>
-                    <li><strong>Name: </strong>Joe Cool</li>
-                    <li><strong>Occupation: </strong>Student</li>
-                    <li><strong>Age: </strong>Eternally 18</li>
-                    <li><strong>Interests: </strong>Traveling, Flying, Play Acting, Eating</li>
-                    <li><strong>Motivation: </strong>Joe is not into planning. His last minute scrambling, whether it is getting to
-                        class in the morning or heading out on his latest adventure, has left him unprepared for weather conditions
-                        many times (He is tired of sleeping in the rain and snow). He would like to be more prepared...without
-                        having to put much effort into it...or planning.</li>
-                    <li><strong>Environment: </strong>Joe is comfortable using laptops and Mobile devices, he will most often be
-                        found on a smart phone however. Many of the places he frequents do not have great signal…he is often
-                        dealing with 3G speeds</li>
-                </ul>
-            </section>
-        </section>
-        <section id="content">
-            <h1>Content</h1>
-            <p>All weather pages should include location name, current temperature, forecast high, forecast low, current weather descriptor, forecast percentage of precipitation, and current wind speed and direction on small devices and hourly temps should be added on larger screens. The pages of the <strong>Weather Site</strong> will be built in the following order:</p>
-            <section id="pages">
-                <h2>Pages</h2>
-                <ol>
-                    <li><strong>Franklin and Greenville</strong> weather for each specific location. The weather for these pages should be pulled from the weather.JSON file that will be provided.</li>
-                    <li><strong>Current:</strong> weather for the current location. Current location should be determined by using the Geolocation API of the browser.  This information should be passed to the National Weather Service (NWS) API to retrieve the current conditions. </li>
-                    <li><strong>Search:</strong> Begins with only a search box, characters entered will cause a list of suggested matches to appear.  Selected location will pull up the weather.</li>
-                </ol>
-            </section>
-        </section>
-        <section id="styles">
-            <h1>Styles</h1>
-            <section id="branding">
-                <h2>Branding</h2>
-                <p><strong><em>The Weather Site</em></strong></p>
-                <img src="images/logo.jpeg" alt="Logo of Site">
-            </section>
-            <section id="typography">
-                <h2>Typography</h2>
-                <p><strong>Heading Font: </strong><a href="https://fonts.google.com/specimen/Sansita">Sansita</a>From Google Fonts</p>
-                <img src="images/sanita-alphabet.jpg" alt="Sanita alphabet">
-                <p><strong>Body Copy Font: </strong>Helvetica</p>
-                <img src="images/helvetica-alphabet.png" alt="Helvetica alphabet">
-            </section>
-            <section id="colors">
-                <h2>Colors</h2>
-                <table style="width:100%">
-                    <tr>
-                        <td><img src="images/color-swatches.jpeg" alt="Color Swatches"></td>
-                    </tr>
-                </table>
-            </section>
-            <section id="elements">
-                <h2>Elements</h2>
-                <p>(add title attribute to each anchor)</p>
-            </section>
-            <section id="navigation">
-                <h2>Navigation</h2>
-                <img src="images/weather-nav-bar.png" alt="Navagation Bar">
-            </section>
-            <section id="opaque-rounded-content-box">
-                <h2>Opaque rounded content box:</h2>
-                <img src="images/weather-tile.png" alt="Opaque rounded content box">
-            </section>
-            <section id="wireframes">
-                <h2>Wireframes</h2>
-                <h3>Small Screen</h3>
-                    <img src="images/wireframe-small.png" alt="Small screen wireframe">
-                <h3>Large Screen</h3>
-                    <img src="images/wireframe-large.png" alt="Large screen wireframe">
-            </section>
-        </section>
-    </main>
-        <footer>
-            <p>&copy; Harmony Durfee</p>
-        </footer>
-    </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Weather Site Plan</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Harmony Durfee">
+  <meta name="description" content="This site is a weather site plan">
+</head>
+
+<body>
+  <header>Weather Site Plan</header>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="franklin-weather.html">Franklin Weather Site</a>
+  </nav>
+  <main>
+    <section id="purpose">
+      <h1>Purpose</h1>
+      <p>The purpose of <strong><em>The Weather Site</em></strong> is to give current weather conditions in 3 different
+        ways. The initial page will give the weather for the current location based on the Geocoding location
+        information from the device. The second is weather for 3 specific locations accessible through a dedicated
+        link, and the third is weather for any location determined by a search string.</p>
+    </section>
+    <section id="audience">
+      <h1>Audience</h1>
+      <p>Primary audience is adults ages 18-30. Most will be students. Access to the site will be split between mobile
+        devices and laptops. A secondary audience will be anyone interested in weather.</p>
+      <section id="audience-goals">
+        <h2>Audience Goals</h2>
+        <p>College students move around quite a bit so one goal would be to quickly get the weather conditions for
+          their
+          current location as they head off to class or study. They are also often far from their homes so the ability
+          to
+          quickly get the conditions for a specific location is important as well. The third goal deals with planning
+          for
+          travels...the ability to get weather conditions for any location will help with last minute packing for road
+          trips.</p>
+      </section>
+      <section id="persona">
+        <h2>Persona</h2>
+        <img src="images/cool-joe.jpg" alt="Picture of Joe Cool">
+        <ul>
+          <li><strong>Name: </strong>Joe Cool</li>
+          <li><strong>Occupation: </strong>Student</li>
+          <li><strong>Age: </strong>Eternally 18</li>
+          <li><strong>Interests: </strong>Traveling, Flying, Play Acting, Eating</li>
+          <li><strong>Motivation: </strong>Joe is not into planning. His last minute scrambling, whether it is getting
+            to
+            class in the morning or heading out on his latest adventure, has left him unprepared for weather conditions
+            many times (He is tired of sleeping in the rain and snow). He would like to be more prepared...without
+            having to put much effort into it...or planning.</li>
+          <li><strong>Environment: </strong>Joe is comfortable using laptops and Mobile devices, he will most often be
+            found on a smart phone however. Many of the places he frequents do not have great signal…he is often
+            dealing with 3G speeds</li>
+        </ul>
+      </section>
+    </section>
+    <section id="content">
+      <h1>Content</h1>
+      <p>All weather pages should include location name, current temperature, forecast high, forecast low, current
+        weather descriptor, forecast percentage of precipitation, and current wind speed and direction on small devices
+        and hourly temps should be added on larger screens. The pages of the <strong>Weather Site</strong> will be
+        built in the following order:</p>
+      <section id="pages">
+        <h2>Pages</h2>
+        <ol>
+          <li><strong>Franklin and Greenville</strong> weather for each specific location. The weather for these pages
+            should be pulled from the weather.JSON file that will be provided.</li>
+          <li><strong>Current:</strong> weather for the current location. Current location should be determined by
+            using the Geolocation API of the browser. This information should be passed to the National Weather Service
+            (NWS) API to retrieve the current conditions. </li>
+          <li><strong>Search:</strong> Begins with only a search box, characters entered will cause a list of suggested
+            matches to appear. Selected location will pull up the weather.</li>
+        </ol>
+      </section>
+    </section>
+    <section id="styles">
+      <h1>Styles</h1>
+      <section id="branding">
+        <h2>Branding</h2>
+        <p><strong><em>The Weather Site</em></strong></p>
+        <img src="images/logo.jpeg" alt="Logo of Site">
+      </section>
+      <section id="typography">
+        <h2>Typography</h2>
+        <p><strong>Heading Font: </strong><a href="https://fonts.google.com/specimen/Sansita">Sansita</a>From Google
+          Fonts</p>
+        <img src="images/sanita-alphabet.jpg" alt="Sanita alphabet">
+        <p><strong>Body Copy Font: </strong>Helvetica</p>
+        <img src="images/helvetica-alphabet.png" alt="Helvetica alphabet">
+      </section>
+      <section id="colors">
+        <h2>Colors</h2>
+        <table style="width:100%">
+          <tr>
+            <td><img src="images/color-swatches.jpeg" alt="Color Swatches"></td>
+          </tr>
+        </table>
+      </section>
+      <section id="elements">
+        <h2>Elements</h2>
+        <p>(add title attribute to each anchor)</p>
+      </section>
+      <section id="navigation">
+        <h2>Navigation</h2>
+        <img src="images/weather-nav-bar.png" alt="Navagation Bar">
+      </section>
+      <section id="opaque-rounded-content-box">
+        <h2>Opaque rounded content box:</h2>
+        <img src="images/weather-tile.png" alt="Opaque rounded content box">
+      </section>
+      <section id="wireframes">
+        <h2>Wireframes</h2>
+        <h3>Small Screen</h3>
+        <img src="images/wireframe-small.png" alt="Small screen wireframe">
+        <h3>Large Screen</h3>
+        <img src="images/wireframe-large.png" alt="Large screen wireframe">
+      </section>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; Harmony Durfee</p>
+  </footer>
+</body>
+
 </html>

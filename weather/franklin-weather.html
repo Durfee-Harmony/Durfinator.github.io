@@ -11,8 +11,10 @@
 </head>
 
 <body>
-  <header><img src="images/logo.jpeg" alt="logo">
-    <h1>The Weather Site</h1>
+  <header id="page-header">
+    <img src="images/logo.jpeg" alt="logo">
+    <div id="logo">&#9748;</div>
+    <h1 id="site-brand">The Weather Site</h1>
   </header>
   <nav>
     <a href="#">Current</a>
@@ -26,7 +28,7 @@
       <p><strong>Zip: </strong>83237 | <strong>Elevation: </strong>1514.246 ft. | <strong>Location: </strong>42.07&#176;
         N, 111.97&#176; W</p>
     </section>
-    <section id="temp">
+    <section id="temp" class="tile">
       <h2>Tempurature</h2>
       <h3>40&deg;</h3>
       <p>
@@ -35,14 +37,14 @@
         <span id="feels">Feels like 40&deg;F</span>
       </p>
     </section>
-    <section id="wind">
+    <section id="wind" class="tile">
       <h2>Wind</h2>
       <img src="images/wind-pointer.png" alt="Wind pointer">
       <div>5 mph</div>
       <p><strong>Direction: </strong>SW</p>
       <p><strong>Gusts: </strong>10-12</p>
     </section>
-    <section id="rain">
+    <section id="summary" class="tile">
       <h2>Rain</h2>
       <img src="images/rain.jpg" alt="Rainy weather">
     </section>

@@ -43,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: sansita, Eurostyle, sans-serif;
+  font-family: Sansita, Eurostyle, sans-serif;
 }
 
 .tile {
@@ -53,7 +53,7 @@ h6 {
   border-radius: 15px;
 }
 
-nav ul li {
+nav a {
   display: inline-block;
   list-style: none;
 }
@@ -71,4 +71,12 @@ footer {
 #site-brand {
   font-size: 2em;
   font-weight: 600;
+}
+
+#high {
+  color: red;
+}
+
+#low {
+  color: blue;
 }

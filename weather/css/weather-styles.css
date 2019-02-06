@@ -1,19 +1,13 @@
-/*
-*  Stylesheet for Screened Devices
-*  Created by: Put your name here
-*  
-*  1.  Includes (fonts and supplementary stylesheets)
-*  1.1 Normalize
-*  1.2 Google fonts
-*
-*  2.  General Styles (for all pages and devices)
-*
-*  3.  Mobile First (styles specific to small screens)
-*
-*  4.  Large Screen Styles (Media Queries begin here)
-*
+/* Stylesheet for Screened Devices
+*  Created by: Harmony
+* Table of Contents
+*   1. Includes (fonts and supplementary stylesheets)
+*     1.1 Normalize
+*     1.2 Google fonts
+*   2. General Styles (for all pages and devices)
+*   3. Mobile First (styles specific to small screens)
+*   4. Large Screen Styles (Media Queries begin here)
 */
-
 
 /* 1.  Includes (fonts and supplementary stylesheets) */
 /* 1.1 Normalize Import */
@@ -21,7 +15,11 @@
 /* 1.2 Google Font Import */
 @import url('https://fonts.googleapis.com/css?family=Sansita');
 
-/*General Styles*/
+/* 2. General Styles*/
+header {
+  background-color: #0e89d5;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -48,6 +46,7 @@ h6 {
 
 #rainy-weather {
   width: 25%;
+  background-image: -moz-element();
 }
 
 .tile {
@@ -55,6 +54,7 @@ h6 {
   margin: .2em auto;
   border: 1px solid;
   border-radius: 15px;
+  background-image: -moz-linear-gradient();
 }
 
 nav a {
@@ -84,3 +84,7 @@ footer {
 #low {
   color: blue;
 }
+
+/* 3. Mobile Styles*/
+
+/* 4. Large Screens*/

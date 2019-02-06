@@ -46,8 +46,8 @@ h6 {
   font-family: Sansita, Eurostyle, sans-serif;
 }
 
-.tile img {
-  size: 30px;
+#rainy-weather {
+  width: 25%;
 }
 
 .tile {

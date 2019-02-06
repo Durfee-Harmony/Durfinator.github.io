@@ -54,7 +54,7 @@ h6 {
   margin: .2em auto;
   border: 1px solid;
   border-radius: 15px;
-  background-image: -moz-linear-gradient(url('images/rainy.jpg'));
+  background-image: url("images/rainy.jpg");
 }
 
 nav a {

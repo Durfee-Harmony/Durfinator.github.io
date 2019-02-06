@@ -46,6 +46,10 @@ h6 {
   font-family: Sansita, Eurostyle, sans-serif;
 }
 
+.tile img {
+  size: 30px;
+}
+
 .tile {
   background-color: rgba(200, 200, 200, .6);
   margin: .2em auto;

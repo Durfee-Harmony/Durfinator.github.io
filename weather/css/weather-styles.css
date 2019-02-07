@@ -44,32 +44,33 @@ h6 {
   font-family: Sansita, Eurostyle, sans-serif;
 }
 
-#rainy-weather {
-  width: 25%;
-  background-image: -moz-element();
-}
-
 .tile {
   background-color: rgba(200, 200, 200, .6);
   margin: .2em auto;
   border: 1px solid;
   border-radius: 15px;
+}
+
+#content {
   background-image: url("../images/rain.jpg");
 }
 
 nav a {
   display: inline-block;
   list-style: none;
+  background-color: #0e89d5;
 }
 
 nav {
   position: fixed;
   bottom: 0;
   left: 0;
+  background-color: #0e89d5;
 }
 
 footer {
   margin-bottom: 2em;
+  background-color: #0e89d5;
 }
 
 #site-brand {

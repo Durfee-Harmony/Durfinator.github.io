@@ -59,7 +59,7 @@ h6 {
 }
 
 #summary #rainy-weather {
-  width: 10px;
+  width: 80%;
 }
 
 nav a {
@@ -88,7 +88,7 @@ footer {
   margin-bottom: 2em;
 }
 
-footer p #copyright {
+#copyright {
   background-color: #0e89d5;
 }
 

@@ -18,6 +18,7 @@
 /* 2. General Styles*/
 header {
   background-color: #0e89d5;
+  display:inline-block;
 }
 
 html {

@@ -57,10 +57,17 @@ h6 {
   border-inline-end-width: 0px;
 }
 
+#summary #rainy-weather {
+  width: 10px;
+}
+
 nav a {
   display: inline-block;
   list-style: none;
   background-color: #0e89d5;
+  text-decoration: none;
+  padding: 14px 25px;
+  text-align: center;
 }
 
 nav {
@@ -72,6 +79,9 @@ nav {
 
 footer {
   margin-bottom: 2em;
+}
+
+footer p {
   background-color: #0e89d5;
 }
 

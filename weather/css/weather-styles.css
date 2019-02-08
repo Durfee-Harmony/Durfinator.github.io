@@ -39,6 +39,15 @@ h1 {
   position: relative;
 }
 
+#heading h2 {
+  font-size: 3em;
+  margin: 1.5px 0 0 auto;
+}
+
+#heading p {
+  margin: 2px 0 0 auto;
+}
+
 html {
   box-sizing: border-box;
 }

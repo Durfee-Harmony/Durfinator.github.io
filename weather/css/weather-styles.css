@@ -18,12 +18,21 @@
 /* 2. General Styles*/
 header {
   background-color: #0e89d5;
-  display:inline-block;
+  display: inline-block;
   width: 100%;
 }
 
 #logo {
   float: left;
+  max-width: 60px;
+}
+
+#site-brand {
+  font-size: 2em;
+  margin-top: 0;
+  margin-left: 10px;
+  display: inline;
+  font-weight: 600;
 }
 
 h1 {
@@ -105,11 +114,6 @@ footer {
 
 #copyright {
   background-color: #0e89d5;
-}
-
-#site-brand {
-  font-size: 2em;
-  font-weight: 600;
 }
 
 #high {

@@ -19,6 +19,15 @@
 header {
   background-color: #0e89d5;
   display:inline-block;
+  width:100%;
+}
+
+#logo {
+  float: left;
+}
+
+h1 {
+  position: relative;
 }
 
 html {
@@ -59,7 +68,7 @@ h6 {
 }
 
 #summary #rainy-weather {
-  width: 80%;
+  width: 200px;
 }
 
 nav a {

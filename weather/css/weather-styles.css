@@ -80,6 +80,10 @@ nav a {
   text-align: center;
 }
 
+a:hover a:active {
+  background-color: #0e8900;
+}
+
 nav {
   position: fixed;
   bottom: 0;
@@ -87,7 +91,7 @@ nav {
   background-color: #0e89d5;
 }
 
-nav a:visited {
+a:link a:visited {
   text-align: center;
   text-decoration: none;
   display: inline-block;

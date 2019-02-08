@@ -82,7 +82,7 @@ footer {
   margin-bottom: 2em;
 }
 
-footer p {
+footer p #copyright {
   background-color: #0e89d5;
 }
 

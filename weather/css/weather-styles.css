@@ -132,6 +132,14 @@ footer {
   color: blue;
 }
 
+#mph {
+  font-size: 30px;
+  position: absolute;
+  top: 510px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* 3. Mobile Styles*/
 
 /* 4. Large Screens*/

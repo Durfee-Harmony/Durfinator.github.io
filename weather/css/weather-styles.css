@@ -16,38 +16,6 @@
 @import url('https://fonts.googleapis.com/css?family=Sansita');
 
 /* 2. General Styles*/
-header {
-  background-color: #0e89d5;
-  display: inline-block;
-  width: 100%;
-}
-
-#logo {
-  float: left;
-  max-width: 60px;
-}
-
-#site-brand {
-  font-size: 2em;
-  margin-top: 0;
-  margin-left: 10px;
-  display: inline;
-  font-weight: 600;
-}
-
-h1 {
-  position: relative;
-}
-
-#heading h1 {
-  font-size: 3em;
-  margin: 1.5px 0 0 auto;
-}
-
-#heading p {
-  margin: 2px 0 0 auto;
-}
-
 html {
   box-sizing: border-box;
 }
@@ -71,7 +39,69 @@ h5,
 h6 {
   font-family: Sansita, Eurostyle, sans-serif;
 }
+/* Links*/
+a:link a:visited {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
 
+a:hover a:active {
+  background-color: #0e8900;
+}
+/*End of Links*/
+/*Header*/
+header #page-header {
+  background-color: #0e89d5;
+  display: inline-block;
+  width: 100%;
+}
+
+header #page-header #logo {
+  float: left;
+  max-width: 60px;
+}
+
+header #page-header #site-brand {
+  font-size: 2em;
+  margin-top: 0;
+  margin-left: 10px;
+  display: inline;
+  font-weight: 600;
+  position: relative;
+}
+/*End of Header*/
+/*Nav*/
+#page-nav {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #0e89d5;
+  width: 100%;
+}
+
+#page-nav a {
+  justify-content: space-around;
+  list-style: none;
+  background-color: #0e89d5;
+  text-decoration: none;
+  padding: 10px 15px;
+  text-align: center;
+  color: white;
+}
+/*End of Nav*/
+/*Heading*/
+#heading h1 {
+  font-size: 3em;
+  margin: 1.5px 0 0 auto;
+}
+
+#heading p {
+  margin: 2px 0 0 auto;
+}
+/*End of Heading*/
 #content {
   background-image: url("../images/rain.jpg");
 }
@@ -87,36 +117,6 @@ h6 {
 #summary #rainy-weather {
   max-width: 300px;
   width: 70%;
-}
-
-#page-nav a {
-  justify-content: space-around;
-  list-style: none;
-  background-color: #0e89d5;
-  text-decoration: none;
-  padding: 10px 15px;
-  text-align: center;
-  color: white;
-}
-
-a:hover a:active {
-  background-color: #0e8900;
-}
-
-#page-nav {
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background-color: #0e89d5;
-  width: 100%;
-}
-
-a:link a:visited {
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
 }
 
 #copyright {

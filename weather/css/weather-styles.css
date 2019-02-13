@@ -39,7 +39,7 @@ h1 {
   position: relative;
 }
 
-#heading h2 {
+#heading h1 {
   font-size: 3em;
   margin: 1.5px 0 0 auto;
 }
@@ -89,8 +89,8 @@ h6 {
   width: 70%;
 }
 
-nav a {
-  display: inline-block;
+#page-nav a {
+  justify-content: space-around;
   list-style: none;
   background-color: #0e89d5;
   text-decoration: none;
@@ -103,7 +103,7 @@ a:hover a:active {
   background-color: #0e8900;
 }
 
-nav {
+#page-nav {
   display: flex;
   justify-content: space-around;
   position: fixed;
@@ -119,12 +119,12 @@ a:link a:visited {
   display: inline-block;
 }
 
-footer {
-  margin-bottom: 2em;
-}
-
 #copyright {
   background-color: #0e89d5;
+}
+
+#deg {
+  font-size: 50px;
 }
 
 #high {
@@ -133,6 +133,10 @@ footer {
 
 #low {
   color: blue;
+}
+
+footer {
+  margin-bottom: 2em;
 }
 
 /* 3. Mobile Styles*/
@@ -153,10 +157,5 @@ footer {
     top: 510px;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  nav {
-    display: flex;
-    background-color: red;
   }
 }

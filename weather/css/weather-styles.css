@@ -91,7 +91,6 @@ a:hover a:active {
 
 #page-nav a {
   list-style: none;
-  background-color: #0e89d5;
   text-decoration: none;
   padding: 10px 15px;
   text-align: center;
@@ -158,17 +157,17 @@ footer {
 
 /*End of Footer*/
 /* 3. Mobile Styles*/
-  #wind {
-    position: relative;
-  }
+#wind {
+  position: relative;
+}
 
-  #mph {
-    font-size: 30px;
-    position: absolute;
-    top: 47.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+#mph {
+  font-size: 30px;
+  position: absolute;
+  top: 47.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* 4. Large Screens*/
 @media screen (min-width: 700px) {

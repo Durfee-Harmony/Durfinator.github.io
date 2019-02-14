@@ -87,6 +87,7 @@ a:hover a:active {
   background-color: #0e89d5;
   width: 100%;
   opacity: 1;
+  filter: alpha(opacity=50);
 }
 
 #page-nav a {
@@ -95,6 +96,7 @@ a:hover a:active {
   padding: 10px 15px;
   text-align: center;
   color: white;
+  background-color: opaque;
 }
 
 /*End of Nav*/

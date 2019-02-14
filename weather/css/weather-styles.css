@@ -39,17 +39,6 @@ h5,
 h6 {
   font-family: Sansita, Eurostyle, sans-serif;
 }
-/* Links*/
-a:link a:visited {
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover a:active {
-  background-color: #0e8900;
-}
-/*End of Links*/
 /*Header*/
 header #page-header {
   background-color: #0e89d5;
@@ -71,6 +60,18 @@ header #page-header #site-brand {
   position: relative;
 }
 /*End of Header*/
+/* Links*/
+a:link a:visited {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover a:active {
+  background-color: #0e8900;
+}
+
+/*End of Links*/
 /*Nav*/
 #page-nav {
   display: flex;
@@ -83,7 +84,6 @@ header #page-header #site-brand {
 }
 
 #page-nav a {
-  justify-content: space-around;
   list-style: none;
   background-color: #0e89d5;
   text-decoration: none;
@@ -102,6 +102,7 @@ header #page-header #site-brand {
   margin: 2px 0 0 auto;
 }
 /*End of Heading*/
+/*Main Content*/
 #content {
   background-image: url("../images/rain.jpg");
 }
@@ -119,10 +120,6 @@ header #page-header #site-brand {
   width: 70%;
 }
 
-#copyright {
-  background-color: #0e89d5;
-}
-
 #deg {
   font-size: 50px;
 }
@@ -134,11 +131,16 @@ header #page-header #site-brand {
 #low {
   color: blue;
 }
+/*End of Main Content*/
+/*Footer*/
+#copyright {
+  background-color: #0e89d5;
+}
 
 footer {
   margin-bottom: 2em;
 }
-
+/*End of Footer*/
 /* 3. Mobile Styles*/
 #mph {
   font-size: 30px;

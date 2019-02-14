@@ -39,6 +39,7 @@ h5,
 h6 {
   font-family: Sansita, Eurostyle, sans-serif;
 }
+
 /*Header*/
 header #page-header {
   background-color: #0e89d5;
@@ -59,6 +60,7 @@ header #page-header #site-brand {
   font-weight: 600;
   position: relative;
 }
+
 /*End of Header*/
 /* Links*/
 a:link a:visited {
@@ -91,6 +93,7 @@ a:hover a:active {
   text-align: center;
   color: white;
 }
+
 /*End of Nav*/
 /*Heading*/
 #heading h1 {
@@ -101,8 +104,10 @@ a:hover a:active {
 #heading p {
   margin: 2px 0 0 auto;
 }
+
 /*End of Heading*/
 /*Main Content*/
+/*Background Picture & Tile Template*/
 #content {
   background-image: url("../images/rain.jpg");
 }
@@ -114,12 +119,8 @@ a:hover a:active {
   border: 1px solid;
   border-radius: 15px;
 }
-
-#summary #rainy-weather {
-  max-width: 300px;
-  width: 70%;
-}
-
+/*End of Background Picture & Tile Template*/
+/*Temp*/
 #deg {
   font-size: 50px;
 }
@@ -131,6 +132,14 @@ a:hover a:active {
 #low {
   color: blue;
 }
+
+/*End of Temp*/
+/*Summary Picture*/
+#summary #rainy-weather {
+  max-width: 300px;
+  width: 70%;
+}
+/*End of Summary Pitcure*/
 /*End of Main Content*/
 /*Footer*/
 #copyright {
@@ -140,6 +149,7 @@ a:hover a:active {
 footer {
   margin-bottom: 2em;
 }
+
 /*End of Footer*/
 /* 3. Mobile Styles*/
 #mph {

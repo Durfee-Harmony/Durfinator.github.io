@@ -166,9 +166,8 @@ footer {
 #mph {
   font-size: 30px;
   position: absolute;
-  top: 47.5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 42%;
+  left: 40.5%;
 }
 
 /* 4. Large Screens*/
@@ -180,8 +179,7 @@ footer {
   #mph {
     font-size: 30px;
     position: absolute;
-    top: 50%;
+    top: 47.5%;
     left: 50%;
-    transform: translate(-50%, -50%);
   }
 }

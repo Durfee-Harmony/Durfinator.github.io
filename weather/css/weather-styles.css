@@ -172,9 +172,13 @@ footer {
 }
 
 /* 4. Large Screens*/
-@media screen (min-width: 700px) {
+@media screen AND (min-width: 700px) {
   #wind {
     position: relative;
+  }
+
+  body #content {
+    background-color: darkgreen;
   }
 
   #mph {

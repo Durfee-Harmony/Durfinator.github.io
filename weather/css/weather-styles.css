@@ -177,10 +177,6 @@ footer {
     position: relative;
   }
 
-  body #content {
-    background-color: darkgreen;
-  }
-
   #mph {
     font-size: 30px;
     position: absolute;

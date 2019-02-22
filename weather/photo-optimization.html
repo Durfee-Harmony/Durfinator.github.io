@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather Photo Responsive Media</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Harmony Durfee">
+    <meta name="description" content="Optimized photos for the weather sites">
+    <link href="css/weather-styles.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body>
+    <header>Optimized Photos</header>
+    <main>
+        <section id="clouds">
+            <picture>
+                <source media="(min-width: 700px)" srcset="images/clouds-large.jpg">
+                <img src="images/clouds-small.jpg" alt="Clouds" style="width:auto;">
+            </picture>
+            <div class="large-images">
+                <ul>
+                    <li>Name: clouds-large.jpg</li>
+                    <li>Dimensions: 900 x 900</li>
+                    <li>Weight: 101kb</li>
+                </ul>
+            </div>
+            <div class="small-images">
+                <ul>
+                    <li>Name: clouds-small.jpg</li>
+                    <li>Dimensions: 400 x 400</li>
+                    <li>Weight: 28.2kb</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Harmony Durfee, 1/18/2019</p>
+    </footer>
+</body>
+
+</html>

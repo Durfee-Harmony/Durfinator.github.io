@@ -170,6 +170,10 @@ footer {
   left: 40.5%;
 }
 
+div.large-images {
+  display: none;
+}
+
 /* 4. Large Screens*/
 @media screen AND (min-width: 700px) {
   #wind {
@@ -181,5 +185,9 @@ footer {
     position: absolute;
     top: 47.5%;
     left: 50%;
+  }
+
+  div.small-images {
+    display: none;
   }
 }

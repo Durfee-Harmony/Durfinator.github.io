@@ -147,6 +147,12 @@ a:hover a:active {
 }
 
 /*End of Summary Pitcure*/
+/*Lists*/
+ul li {
+  font-family: helvetica, verdana, sans-serif;
+}
+
+/*End of Lists*/
 /*End of Main Content*/
 /*Footer*/
 #copyright {
@@ -159,19 +165,21 @@ footer {
 
 /*End of Footer*/
 /* 3. Mobile Styles*/
-#wind {
-  position: relative;
-}
+@media screen AND (max-width: 700px) {
+  #wind {
+    position: relative;
+  }
 
-#mph {
-  font-size: 30px;
-  position: absolute;
-  top: 42%;
-  left: 40.5%;
-}
+  #mph {
+    font-size: 30px;
+    position: absolute;
+    top: 42%;
+    left: 40.5%;
+  }
 
-div.large-images {
-  display: none;
+  div.large-images {
+    display: none;
+  }
 }
 
 /* 4. Large Screens*/

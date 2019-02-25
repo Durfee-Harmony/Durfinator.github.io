@@ -169,6 +169,15 @@ footer {
   #wind {
     position: relative;
   }
+  
+  #dial {
+    height: 150px;
+    width: 150px;
+    background: no-repeat center/85% url('../weather/images/wind-pointer.png');
+    z-index: 100;
+    margin: -.6em auto 0;
+    transform: rotate(5deg);
+  }
 
   #mph {
     font-size: 30px;
@@ -186,6 +195,15 @@ footer {
 @media screen AND (min-width: 700px) {
   #wind {
     position: relative;
+  }
+
+  #dial {
+    height: 150px;
+    width: 150px;
+    background: no-repeat center/85% url('../weather/images/wind-pointer.png');
+    z-index: 100;
+    margin: -.6em auto 0;
+    transform: rotate(5deg);
   }
 
   #mph {

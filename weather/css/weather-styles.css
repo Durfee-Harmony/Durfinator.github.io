@@ -140,6 +140,48 @@ a:hover a:active {
 }
 
 /*End of Temp*/
+/*Wind Pointer Rotation*/
+#dial {
+  height: 150px;
+  width: 150px;
+  background: no-repeat center/85% url('../weather/images/wind-pointer.png');
+  z-index: 100;
+  margin: -.6em auto 0;
+}
+
+.n {
+  transform: rotate(0deg);
+}
+
+.ne {
+  transform: rotate(45deg);
+}
+
+.e {
+  transform: rotate(90deg);
+}
+
+.se {
+  transform: rotate(135deg);
+}
+
+.s {
+  transform: rotate(180deg);
+}
+
+.sw {
+  transform: rotate(225deg);
+}
+
+.w {
+  transform: rotate(270deg);
+}
+
+.nw {
+  transform: rotate(315deg);
+}
+
+/*End of Wind Pointer Rotation*/
 /*Summary Picture*/
 #summary #rainy-weather {
   max-width: 300px;
@@ -170,15 +212,6 @@ footer {
     position: relative;
   }
   
-  #dial {
-    height: 150px;
-    width: 150px;
-    background: no-repeat center/85% url('../weather/images/wind-pointer.png');
-    z-index: 100;
-    margin: -.6em auto 0;
-    transform: rotate(5deg);
-  }
-
   #mph {
     font-size: 30px;
     position: absolute;
@@ -195,15 +228,6 @@ footer {
 @media screen AND (min-width: 700px) {
   #wind {
     position: relative;
-  }
-
-  #dial {
-    height: 150px;
-    width: 150px;
-    background: no-repeat center/85% url('../weather/images/wind-pointer.png');
-    z-index: 100;
-    margin: -.6em auto 0;
-    transform: rotate(5deg);
   }
 
   #mph {

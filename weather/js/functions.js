@@ -5,8 +5,16 @@ console.log('My javascript is being read.');
 const temp = 31;
 const speed = 5;
 buildWC(speed, temp);
-const direction = document.getElementById("direction").value;
+const direction = document.getElementById("direction").innerHTML;
 windDial(direction);
+const weather = document.getElementById("weather").innerHTML;
+let type = getCondition(weather);
+changeSummaryImage(type);
+const meters = document.getElementById("elevation").innerHTML;
+console.log(meters);
+const feet = convertMeters(meters);
+console.log(feet);
+document.getElementById("elevation").innerHTML = feet;
 
 // Calculate the Windchill
 function buildWC(speed, temp) {
@@ -26,54 +34,38 @@ function buildWC(speed, temp) {
 
 // Wind Dial Function
 function windDial(direction) {
-  // Get the container
-  const dial = document.getElementById("dial");
   console.log(direction);
-  // Determine the dial class
-  /*
-  switch (direction) {
-    case "North":
-    case "N":
-      dial.setAttribute("class", "n"); //"n" is the CSS rule selector
-      break;
-    case "NE":
-    case "NNE":
-    case "ENE":
-      dial.setAttribute("class", "ne");
-      break;
-    case "NW":
-    case "NNW":
-    case "WNW":
-      dial.setAttribute("class", "nw");
-      break;
-    case "South":
-    case "S":
-      dial.setAttribute("class", "s");
-      break;
-    case "SE":
-    case "SSE":
-    case "ESE":
-      dial.setAttribute("class", "se");
-      break;
-    case "SW":
-    case "SSW":
-    case "WSW":
-      dial.setAttribute("class", "sw");
-      break;
-    case "East":
-    case "E":
-      dial.setAttribute("class", "e");
-      break;
-    case "West":
-    case "W":
-      dial.setAttribute("class", "w");
-      break;
-  }*/
+  direction = direction.toLowerCase();
+  if(direction == "ne" || direction == "nne" || direction == "ene"){
+    dial.setAttribute("class", "ne");
+  }
+  else if (direction == "nw" || direction == "nnw" || direction == "wnw") {
+    dial.setAttribute("class", "nw");
+  }
+  else if (direction == "se" || direction == "sse" || direction == "ese") {
+    dial.setAttribute("class", "se");
+  }
+  else if (direction == "sw" || direction == "ssw" || direction == "wsw") {
+    dial.setAttribute("class", "sw");
+  }
+  else if (direction == "e" || direction == "east") {
+    dial.setAttribute("class", "e");
+  }
+  else if (direction == "w" || direction == "west") {
+    dial.setAttribute("class", "w");
+  }
+  else if (direction == "s" || direction == "south") {
+    dial.setAttribute("class", "s");
+  }
+  else{
+    dial.setAttribute("class", "n");
+  }
 }
 
-//Changing the weather condition picture in the background
+//Finding the weather condition
 function getCondition (type){
   type = type.toLowerCase();
+  console.log(type);
   if(type == "rainy" || type == "rain" || type == "drizzly" || type == "wet"){
     type = "rain";
   }
@@ -91,28 +83,29 @@ function getCondition (type){
   }
   return type;
 }
-let type = getCondition("cloudy");
+
+//Changing the picture in the background to match the weather condition
 function changeSummaryImage(type){
-  alert("function started");
-  if(type.Equals("rain")){
+  if(type == "rain"){
     content.setAttribute("class", "rain");
-    alert("success");
   }
   else if(type == "clear"){
     content.setAttribute("class", "clear");
-    alert("success");
   }
-  else if(type.Equals("clouds")){
+  else if(type == "clouds"){
     content.setAttribute("class", "clouds");
-    alert("success");
   }
   else if(type == "fog"){
     content.setAttribute("class", "fog");
-    alert("success");
   }
   else {
     content.setAttribute("class", "snow");
-    alert("success");
   }
+  console.log(type);
 }
-changeSummaryImage(type);
+
+function convertMeters(meters) {
+ let feet = meters * 3.28084;
+ feet = Math.round(feet);
+ return feet;
+}

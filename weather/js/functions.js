@@ -20,8 +20,8 @@ function buildWC(speed, temp) {
   wc = (wc > temp) ? temp : wc;
   // Display the windchill
   console.log(wc);
-  wc = 'Feels like ' + wc + '&deg;F';
-  feelTemp.innerHTML = wc;
+  let cw = 'Feels like ' + wc + '&deg;F';
+  document.getElementById("feels").innerHTML = cw;
 }
 
 // Wind Dial Function
@@ -30,6 +30,7 @@ function windDial(direction) {
   const dial = document.getElementById("dial");
   console.log(direction);
   // Determine the dial class
+  /*
   switch (direction) {
     case "North":
     case "N":
@@ -67,6 +68,51 @@ function windDial(direction) {
     case "W":
       dial.setAttribute("class", "w");
       break;
-  }
-  windDial("E");
+  }*/
 }
+
+//Changing the weather condition picture in the background
+function getCondition (type){
+  type = type.toLowerCase();
+  if(type == "rainy" || type == "rain" || type == "drizzly" || type == "wet"){
+    type = "rain";
+  }
+  else if(type == "clear" || type == "nothing"){
+    type = "clear";
+  }
+  else if(type == "cloudy" || type == "clouds" || type == "overcast"){
+    type = "clouds";
+  }
+  else if(type == "fog" || type == "foggy"){
+    type = "fog";
+  }
+  else if(type == "snow" || type == "snowy" || type == "blizzard"){
+    type = "snow";
+  }
+  return type;
+}
+let type = getCondition("cloudy");
+function changeSummaryImage(type){
+  alert("function started");
+  if(type.Equals("rain")){
+    content.setAttribute("class", "rain");
+    alert("success");
+  }
+  else if(type == "clear"){
+    content.setAttribute("class", "clear");
+    alert("success");
+  }
+  else if(type.Equals("clouds")){
+    content.setAttribute("class", "clouds");
+    alert("success");
+  }
+  else if(type == "fog"){
+    content.setAttribute("class", "fog");
+    alert("success");
+  }
+  else {
+    content.setAttribute("class", "snow");
+    alert("success");
+  }
+}
+changeSummaryImage(type);

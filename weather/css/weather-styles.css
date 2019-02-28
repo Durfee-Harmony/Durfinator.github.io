@@ -114,7 +114,7 @@ a:hover a:active {
 /*Main Content*/
 /*Background Picture & Tile Template*/
 #content {
-  background-image: url("../images/rain.jpg");
+  background-size: cover;
 }
 
 .tile {
@@ -222,6 +222,26 @@ footer {
   div.large-images {
     display: none;
   }
+
+  section.rain {
+    background-image: url("../images/rain-small.jpg");
+  }
+
+  section.clouds {
+    background-image: url("../images/clouds-small.jpg");
+  }
+
+  section.clear {
+    background-image: url("../images/clear-small.jpg");
+  }
+
+  section.fog {
+    background-image: url("../images/fog-small.jpg");
+  }
+
+  section.snow {
+    background-image: url("../images/snow-small.jpg");
+  }
 }
 
 /* 4. Large Screens*/
@@ -239,5 +259,25 @@ footer {
 
   div.small-images {
     display: none;
+  }
+
+  section.rain {
+    background-image: url("../images/rain-large.jpg");
+  }
+
+  section.clouds {
+    background-image: url("../images/clouds-large.jpg");
+  }
+
+  section.clear {
+    background-image: url("../images/clear-large.jpg");
+  }
+
+  section.fog {
+    background-image: url("../images/fog-large.jpg");
+  }
+
+  section.snow {
+    background-image: url("../images/snow-large.jpg");
   }
 }

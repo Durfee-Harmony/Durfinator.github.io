@@ -97,24 +97,21 @@ function getCondition (type){
 function changeSummaryImage(type){
   if(type == "rain"){
     content.setAttribute("class", "rain");
-    weatherimg.setAttribute("src", "images/rain-small.jpg");
   }
   else if(type == "clear"){
     content.setAttribute("class", "clear");
-    weatherimg.setAttribute("src", "images/clear-small.jpg");
   }
   else if(type == "clouds"){
     content.setAttribute("class", "clouds");
-    weatherimg.setAttribute("src", "images/clouds-small.jpg");
   }
   else if(type == "fog"){
     content.setAttribute("class", "fog");
-    weatherimg.setAttribute("src", "images/fog-small.jpg");
   }
   else {
     content.setAttribute("class", "snow");
-    weatherimg.setAttribute("src", "images/snow-small.jpg");
   }
+  weatherimg.setAttribute("src", "images/" + type + "-small.jpg");
+  weatherimg.setAttribute("alt", type + " weather image");
   console.log(type);
 }
 

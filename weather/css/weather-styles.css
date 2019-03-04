@@ -88,6 +88,7 @@ a:hover a:active {
   width: 100%;
   opacity: 1;
   filter: alpha(opacity=50);
+  z-index: 300;
 }
 
 #page-nav a {
@@ -183,7 +184,7 @@ a:hover a:active {
 
 /*End of Wind Pointer Rotation*/
 /*Summary Picture*/
-#summary #rainy-weather {
+#summary img {
   max-width: 300px;
   width: 70%;
 }

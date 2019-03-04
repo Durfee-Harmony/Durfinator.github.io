@@ -38,27 +38,35 @@ function windDial(direction) {
   direction = direction.toLowerCase();
   if(direction == "ne" || direction == "nne" || direction == "ene"){
     dial.setAttribute("class", "ne");
+    console.log("ne");
   }
   else if (direction == "nw" || direction == "nnw" || direction == "wnw") {
     dial.setAttribute("class", "nw");
+    console.log("nw");
   }
   else if (direction == "se" || direction == "sse" || direction == "ese") {
     dial.setAttribute("class", "se");
+    console.log("se");
   }
   else if (direction == "sw" || direction == "ssw" || direction == "wsw") {
     dial.setAttribute("class", "sw");
+    console.log("sw");
   }
   else if (direction == "e" || direction == "east") {
     dial.setAttribute("class", "e");
+    console.log("e");
   }
   else if (direction == "w" || direction == "west") {
     dial.setAttribute("class", "w");
+    console.log("w");
   }
   else if (direction == "s" || direction == "south") {
     dial.setAttribute("class", "s");
+    console.log("s");
   }
   else{
     dial.setAttribute("class", "n");
+    console.log("n");
   }
 }
 
@@ -75,12 +83,13 @@ function getCondition (type){
   else if(type == "cloudy" || type == "clouds" || type == "overcast"){
     type = "clouds";
   }
-  else if(type == "fog" || type == "foggy"){
+  else if(type == "fog" || type == "foggy" || type == "hazy"){
     type = "fog";
   }
   else if(type == "snow" || type == "snowy" || type == "blizzard"){
     type = "snow";
   }
+  console.log(type);
   return type;
 }
 
@@ -88,18 +97,23 @@ function getCondition (type){
 function changeSummaryImage(type){
   if(type == "rain"){
     content.setAttribute("class", "rain");
+    weatherimg.setAttribute("src", "images/rain-small.jpg");
   }
   else if(type == "clear"){
     content.setAttribute("class", "clear");
+    weatherimg.setAttribute("src", "images/clear-small.jpg");
   }
   else if(type == "clouds"){
     content.setAttribute("class", "clouds");
+    weatherimg.setAttribute("src", "images/clouds-small.jpg");
   }
   else if(type == "fog"){
     content.setAttribute("class", "fog");
+    weatherimg.setAttribute("src", "images/fog-small.jpg");
   }
   else {
     content.setAttribute("class", "snow");
+    weatherimg.setAttribute("src", "images/snow-small.jpg");
   }
   console.log(type);
 }
@@ -107,5 +121,6 @@ function changeSummaryImage(type){
 function convertMeters(meters) {
  let feet = meters * 3.28084;
  feet = Math.round(feet);
+  console.log(feet);
  return feet;
 }

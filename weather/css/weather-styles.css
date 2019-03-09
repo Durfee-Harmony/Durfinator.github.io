@@ -39,6 +39,9 @@ h5,
 h6 {
   font-family: Sansita, Eurostyle, sans-serif;
 }
+.hide {
+  display: none;
+}
 
 /*Header*/
 #page-header {

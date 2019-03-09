@@ -77,7 +77,7 @@ function windDial(direction) {
 function getCondition (type){
   type = type.toLowerCase();
   console.log(type);
-  if(type == "rainy" || type == "rain" || type == "drizzly" || type == "wet"){
+  if(type == "rainy" || type == "rain" || type == "drizzly" || type == "wet" || type == "thunderstorm" || type == "thunderstorms" || type == "stormy"){
     type = "rain";
   }
   else if(type == "clear" || type == "nothing"){
@@ -150,7 +150,7 @@ function buildHourlyData(nextHour, hourlyTemps) {
   let hourlyListItems = '<li>' + format_time(nextHour) + ': ' + hourlyTemps[0] + '&deg;F</li>';
   // Build the remaining list items using a for loop
   for (let i = 1, x = hourlyTemps.length; i < x; i++) {
-    hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
+    hourlyListItems += '<li> | ' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F</li>';
   }
   console.log('HourlyList is: ' + hourlyListItems);
   return hourlyListItems;

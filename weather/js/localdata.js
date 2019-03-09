@@ -33,15 +33,25 @@ function fetchData(weatherURL) {
             console.log('fullName is: ' + fullName);
 
             // Get the temperature data
-
+            let locHighTemp = g.High;
+            let locLowTemp = g.Low;
+            let locTemp = g.Temp;
 
             // Get the wind data 
-
+            let locWind = g.Wind;
+            let locWindDirection = g.Direction;
+            let locGusts = g.Gusts;
 
             // Get the current conditions
+            let locPrecip = g.Precip;
+            let locSummary = g.Summary;
+            let locLongitude = g.Longitude;
+            let locLatitude = g.Latitude;
+            let locElevation = g.Elevation;
+            let locZip = g.Zip;
 
-
-            // Get the hourly data 
+            // Get the hourly data
+            let locHourly = g.Hourly;
 
             // ************ Display the content ******************************
             // Set the title with the location name at the first
@@ -55,6 +65,14 @@ function fetchData(weatherURL) {
             // Greenville, SC | The Weather Site
 
             // Set the Location information
+            locElevation = convertMeters(locElevation);
+            locLongitude = convertMeters(locLongitude);
+            locLatitude = convertMeters(locLatitude);
+            document.getElementById("zip").innerHTML = locZip;
+            document.getElementById("elevation").innerHTML = locElevation;
+            document.getElementById("longitude").innerHTML = locLongitude;
+            document.getElementById("latitude").innerHTML = locLatitude;
+
             // Get the h1 to display the city location
             let contentHeading = document.getElementById('content-heading');
             contentHeading.innerHTML = fullName;
@@ -62,16 +80,23 @@ function fetchData(weatherURL) {
 
 
             // Set the temperature information
-
+            buildWC(locWind, locTemp);
+            document.getElementById("deg").innerHTML = locTemp + "&deg;F";
+            document.getElementById("high").innerHTML = locHighTemp + "&deg;F";
+            document.getElementById("low").innerHTML = locLowTemp + "&deg;F";
 
             // Set the wind information
-
+            windDial(locWindDirection);
+            document.getElementById("gusts").innerHTML = locGusts;
+            document.getElementById("direction").innerHTML = locWindDirection;
+            document.getElementById("mph").innerHTML = locWind + " mph";
 
             // Set the current conditions information
-
+            type = getCondition(locSummary);
+            changeSummaryImage(type);
 
             // Set the hourly temperature information
-
+            document.getElementById("hourly-list").innerHTML = buildHourlyData(nextHour, locHourly);
 
             // Change the status of the containers
             contentContainer.setAttribute('class', ''); // removes the hide class

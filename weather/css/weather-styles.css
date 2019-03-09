@@ -201,6 +201,17 @@ ul li {
 /*End of Lists*/
 /*End of Main Content*/
 /*Footer*/
+ul#hourly-list li {
+  list-style: none;
+  display: inline-block;
+  padding: 3px;
+  text-decoration: none;
+}
+ul#hourly-list li::before {
+  list-style: none;
+  /*content: " \007C ";*/
+}
+
 #copyright {
   background-color: #0e89d5;
 }
@@ -212,14 +223,32 @@ footer {
 /*End of Footer*/
 /* 3. Mobile Styles*/
 @media screen AND (max-width: 700px) {
+  #content {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0;
+  }
+
+  #temp {
+    grid-row: 1/2;
+    margin: 0;
+  }
+
   #wind {
     position: relative;
+    grid-row: 2/3;
+    margin: 0;
+  }
+
+  #summary {
+    grid-row: 3/4;
+    margin: 0;
   }
   
   #mph {
     font-size: 30px;
     position: absolute;
-    top: 40%;
+    top: 39%;
     left: 40.5%;
   }
 
@@ -250,15 +279,34 @@ footer {
 
 /* 4. Large Screens*/
 @media screen AND (min-width: 700px) {
+
+  #content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0;
+  }
+
+  #temp {
+    grid-column: 1/2;
+    margin: 0;
+  }
+
   #wind {
     position: relative;
+    grid-column: 2/3;
+    margin: 0;
+  }
+
+  #summary {
+    grid-column: 3/4;
+    margin: 0;
   }
 
   #mph {
     font-size: 30px;
     position: absolute;
-    top: 40%;
-    left: 47%;
+    top: 39%;
+    left: 41%;
   }
 
   div.small-images {

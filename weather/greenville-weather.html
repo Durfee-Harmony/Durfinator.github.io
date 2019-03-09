@@ -20,14 +20,16 @@
     <a href="#">Current</a>
     <a href="#">Search</a>
     <a href="franklin-weather.html" title="Visit the Franklin, Idaho Weather Site">Franklin</a>
-    <a href="#" title="Visit the Franklin, Idaho Weather Site">Franklin</a>
+    <a href="#" title="Visit the Greenville, Idaho Weather Site">Greenville</a>
   </nav>
-<section id="status">Please be patient while I get your weather information.</section>
+  <section id="status">Please be patient while I get your weather information.</section>
   <main id="main-content" class="hide">
     <section id="heading">
       <h1 id="content-heading">Franklin, Idaho</h1>
-      <p><strong>Zip: </strong>83237 <strong>| Elevation: </strong><span id="elevation">1514.246</span> ft. <strong>| Location: </strong>42.07&#176;
-        N, 111.97&#176; W</p>
+      <p><strong>Zip: </strong><span id="zip">83237</span> <strong>| Elevation: </strong><span id="elevation">1514.246</span>
+        ft. <strong>|
+          Location: </strong><span id="longitude">42.07</span>&#176;
+        N, <span id="latitude">111.97</span>&#176; W</p>
     </section>
     <section id="content" class="rain">
       <section id="temp" class="tile">
@@ -44,7 +46,7 @@
         <div id="dial" class="sw"></div>
         <div id="mph">5 mph</div>
         <p><strong>Direction: </strong><span id="direction">SW</span></p>
-        <p><strong>Gusts: </strong>10-12</p>
+        <p><strong>Gusts: </strong><span id="gusts">10-12</span></p>
       </section>
       <section id="summary" class="tile">
         <h2 id="weather">Rain</h2>
@@ -55,10 +57,21 @@
   <footer>
     <section id="hourly-forecast" class="tile">
       <h2>Hourly Forecast</h2>
-      <p>
-        10am: 41&deg;F | 11am: 41&deg;F | 12pm: 41&deg;F | 1pm: 41&deg;F | 2pm: 41&deg;F | 3pm: 41&deg;F | 4pm:
-        42&deg;F | 5pm: 44&deg;F | 6pm: 44&deg;F | 7pm: 46&deg;F | 8pm: 49&deg;F | 9pm: 51&deg;F | 10pm: 55&deg;F
-      </p>
+      <ul id="hourly-list">
+        <li>10am: 41&deg;F | </li>
+        <li>11am: 41&deg;F | </li>
+        <li>12pm: 41&deg;F | </li>
+        <li>1pm: 41&deg;F | </li>
+        <li>2pm: 41&deg;F | </li>
+        <li>3pm: 41&deg;F | </li>
+        <li>4pm: 42&deg;F | </li>
+        <li>5pm: 44&deg;F | </li>
+        <li>6pm: 44&deg;F | </li>
+        <li>7pm: 46&deg;F | </li>
+        <li>8pm: 49&deg;F | </li>
+        <li>9pm: 51&deg;F | </li>
+        <li>10pm: 55&deg;F</li>
+      </ul>
     </section>
     <p id="copyright">&copy; 2019 &mdash; The Weather Site</p>
   </footer>

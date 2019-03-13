@@ -94,6 +94,7 @@ function fetchData(weatherURL) {
             // Set the current conditions information
             type = getCondition(locSummary);
             changeSummaryImage(type);
+            document.getElementById("weather").innerHTML = locSummary;
 
             // Set the hourly temperature information
             document.getElementById("hourly-list").innerHTML = buildHourlyData(nextHour, locHourly);

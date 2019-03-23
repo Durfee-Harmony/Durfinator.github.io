@@ -45,60 +45,62 @@ function buildWC(speed, temp) {
 }
 
 // Wind Dial Function
-function windDial(direction) {
-  console.log(direction);
-  direction = direction.toLowerCase();
-  if(direction == "ne" || direction == "nne" || direction == "ene"){
-    dial.setAttribute("class", "ne");
-    console.log("ne");
-  }
-  else if (direction == "nw" || direction == "nnw" || direction == "wnw") {
-    dial.setAttribute("class", "nw");
-    console.log("nw");
-  }
-  else if (direction == "se" || direction == "sse" || direction == "ese") {
-    dial.setAttribute("class", "se");
-    console.log("se");
-  }
-  else if (direction == "sw" || direction == "ssw" || direction == "wsw") {
-    dial.setAttribute("class", "sw");
-    console.log("sw");
-  }
-  else if (direction == "e" || direction == "east") {
-    dial.setAttribute("class", "e");
-    console.log("e");
-  }
-  else if (direction == "w" || direction == "west") {
-    dial.setAttribute("class", "w");
-    console.log("w");
-  }
-  else if (direction == "s" || direction == "south") {
-    dial.setAttribute("class", "s");
-    console.log("s");
-  }
-  else{
+function windDial(d) {
+  let type = "North";
+  console.log(d);
+  if (d != null) {
+    d = d.toString();
+    d = d.toLowerCase();
+    if ((d == "ne" || d == "nne" || d == "ene") || (d <= "60" && d >= "30")) {
+      dial.setAttribute("class", "ne");
+      console.log("ne");
+      type = "NE";
+    } else if ((d == "nw" || d == "nnw" || d == "wnw") || (d <= "330" && d >= "300")) {
+      dial.setAttribute("class", "nw");
+      console.log("nw");
+      type = "NW";
+    } else if ((d == "se" || d == "sse" || d == "ese") || (d <= "150" && d >= "120")) {
+      dial.setAttribute("class", "se");
+      console.log("se");
+      type = "SE";
+    } else if ((d == "sw" || d == "ssw" || d == "wsw") || (d <= "240" && d >= "210")) {
+      dial.setAttribute("class", "sw");
+      console.log("sw");
+      type = "SW";
+    } else if ((d == "e" || d == "east") || (d < "60" && d > "120")) {
+      dial.setAttribute("class", "e");
+      console.log("e");
+      type = "East";
+    } else if ((d == "w" || d == "west") || (d < "300" && d > "240")) {
+      dial.setAttribute("class", "w");
+      console.log("w");
+      type = "West";
+    } else if ((d == "s" || d == "south") || (d < "210" && d > "150")) {
+      dial.setAttribute("class", "s");
+      console.log("s");
+      type = "South";
+    }
+  } else {
     dial.setAttribute("class", "n");
     console.log("n");
+    type = "None";
   }
+  document.getElementById('direction').innerHTML = type;
 }
 
 //Finding the weather condition
-function getCondition (type){
+function getCondition(type) {
   type = type.toLowerCase();
   console.log(type);
-  if(type == "rainy" || type == "rain" || type == "drizzly" || type == "wet" || type == "thunderstorm" || type == "thunderstorms" || type == "stormy"){
+  if (type == "rainy" || type == "rain" || type == "drizzly" || type == "wet" || type == "thunderstorm" || type == "thunderstorms" || type == "stormy") {
     type = "rain";
-  }
-  else if(type == "clear" || type == "nothing"){
+  } else if (type == "clear" || type == "nothing") {
     type = "clear";
-  }
-  else if(type == "cloudy" || type == "clouds" || type == "overcast"){
+  } else if (type == "cloudy" || type == "clouds" || type == "overcast") {
     type = "clouds";
-  }
-  else if(type == "fog" || type == "foggy" || type == "hazy"){
+  } else if (type == "fog" || type == "foggy" || type == "hazy") {
     type = "fog";
-  }
-  else if(type == "snow" || type == "snowy" || type == "blizzard"){
+  } else if (type == "snow" || type == "snowy" || type == "blizzard") {
     type = "snow";
   }
   console.log(type);
@@ -106,20 +108,16 @@ function getCondition (type){
 }
 
 //Changing the picture in the background to match the weather condition
-function changeSummaryImage(type){
-  if(type == "rain"){
+function changeSummaryImage(type) {
+  if (type == "rain") {
     content.setAttribute("class", "rain");
-  }
-  else if(type == "clear"){
+  } else if (type == "clear") {
     content.setAttribute("class", "clear");
-  }
-  else if(type == "clouds"){
+  } else if (type == "clouds") {
     content.setAttribute("class", "clouds");
-  }
-  else if(type == "fog"){
+  } else if (type == "fog") {
     content.setAttribute("class", "fog");
-  }
-  else {
+  } else {
     content.setAttribute("class", "snow");
   }
   weatherimg.setAttribute("src", "images/" + type + "-small.jpg");
@@ -128,10 +126,24 @@ function changeSummaryImage(type){
 }
 
 function convertMeters(meters) {
- let feet = meters * 3.28084;
- feet = Math.round(feet);
+  let feet = meters * 3.28084;
+  feet = Math.round(feet);
   console.log(feet);
- return feet;
+  return feet;
+}
+
+function celsiusToFarenheit(c) {
+  let f = ((c * (9 / 5)) + 32);
+  f = Math.floor(f);
+  console.log(f);
+  return f;
+}
+
+function metersToMiles(meters) {
+  let mph = meters * 2.237;
+  mph = Math.round(mph);
+  console.log(mph);
+  return mph;
 }
 
 // Convert, Format time to 12 hour format
@@ -241,18 +253,50 @@ function getWeather(stationId) {
       console.log(data);
 
       // Store weather information to localStorage 
-
-
-      // Build the page for viewing 
-
+      localStorage = data['@context' ['properties']];
+      console.log(localStorage);
+      // Build the page for viewing
+      buildPage(data.properties, data);
     })
     .catch(error => console.log('There was a getWeather error: ', error))
 } // end getWeather function
 
 // Populate the current location weather page
-function buildPage() {
+function buildPage(c, data) {
   // Task 1 - Feed data to WC, Dial, Image, Meters to feet and hourly temps functions
+  buildWC(c.windSpeed.value, c.temperature.value);
+  windDial(c.windDirection.value);
+  changeSummaryImage(getCondition(c.textDescription));
+  document.getElementById('elevation').innerHTML = convertMeters(c.elevation.value);
+  //buildHourlyData(nextHour, hourlyTemps);
+
   // Task 2 - Populate location information
+  document.getElementById('zip');
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      document.getElementById('latitude').innerHTML = convertMeters(position.coords.latitude);
+      document.getElementById('longitude').innerHTML = convertMeters(position.coords.longitude);
+    })
+  }
+
   // Task 3 - Populate weather information
+  document.getElementById('content-heading').innerHTML = storage.locName + ", " + storage.locState;
+  document.getElementById('deg').innerHTML = celsiusToFarenheit(c.temperature.value) + "&deg;F";
+  if (celsiusToFarenheit(c.maxTemperatureLast24Hours.value) > celsiusToFarenheit(c.temperature.value)) {
+    document.getElementById('high').innerHTML = celsiusToFarenheit(c.maxTemperatureLast24Hours.value) + "&deg;F";
+  } else {
+    document.getElementById('high').innerHTML = celsiusToFarenheit(c.temperature.value) + "&deg;F";
+  }
+  if (celsiusToFarenheit(c.minTemperatureLast24Hours.value) > celsiusToFarenheit(c.temperature.value)) {
+    document.getElementById('low').innerHTML = celsiusToFarenheit(c.minTemperatureLast24Hours.value) + "&deg;F";
+  } else {
+    document.getElementById('low').innerHTML = celsiusToFarenheit(c.temperature.value) + "&deg;F";
+  }
+  document.getElementById('mph').innerHTML = metersToMiles(c.windSpeed.value) + " mph";
+  document.getElementById('gusts').innerHTML = (c.windGust.value) ^ "None";
+  document.getElementById('weather').innerHTML = c.textDescription;
+
   // Task 4 - Hide status and show main
+  document.getElementById('main-content').setAttribute('class', '');
+  document.getElementById('status').setAttribute('class', 'hide');
 }

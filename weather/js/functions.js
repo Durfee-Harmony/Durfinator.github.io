@@ -280,6 +280,7 @@ function buildPage(c, data) {
   }
 
   // Task 3 - Populate weather information
+  document.getElementById('page-title').innerHTML = storage.locName + ", " + storage.locState + " | Weather Site";
   document.getElementById('content-heading').innerHTML = storage.locName + ", " + storage.locState;
   document.getElementById('deg').innerHTML = celsiusToFarenheit(c.temperature.value) + "&deg;F";
   if (celsiusToFarenheit(c.maxTemperatureLast24Hours.value) > celsiusToFarenheit(c.temperature.value)) {

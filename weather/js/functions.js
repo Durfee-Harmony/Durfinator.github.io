@@ -339,9 +339,7 @@ function buildPage(c, data) {
   storage.setItem("mph", metersToMiles(c.windSpeed.value));
   document.getElementById('mph').innerHTML = storage.getItem("mph") + " mph";
   document.getElementById('gusts').innerHTML = (c.windGust.value) ^ "None";
-  let word = storage.getItem('summary');
-  word[0] = word[0].toUpperCase();
-  storage.removeItem('summary');
+  let word = storage.getItem('summary').charAt(0).toUpperCase() + storage.getItem('summary').slice(1);
   storage.setItem('summary', word);
   document.getElementById('weather').innerHTML = storage.getItem("summary");
 

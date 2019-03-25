@@ -327,8 +327,8 @@ function buildPage(c, data) {
 
   // Task 2 - Populate location information
   //document.getElementById('zip');
-  document.getElementById('latitude').innerHTML = convertMeters(storage.getItem("lat"));
-  document.getElementById('longitude').innerHTML = convertMeters(storage.getItem("long"));
+  document.getElementById('latitude').innerHTML = storage.getItem("lat");
+  document.getElementById('longitude').innerHTML = storage.getItem("long");
 
   // Task 3 - Populate weather information
   document.getElementById('page-title').innerHTML = storage.locName + ", " + storage.locState + " | Weather Site";

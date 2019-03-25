@@ -92,9 +92,9 @@ function windDial(d) {
 function getCondition(type) {
   type = type.toLowerCase();
   console.log(type);
-  if (type == "rainy" || type == "rain" || type == "drizzly" || type == "wet" || type == "thunderstorm" || type == "thunderstorms" || type == "stormy") {
+  if (type == "rainy" || type == "rain" || type == "drizzly" || type == "wet" || type == "thunderstorm" || type == "thunderstorms" || type == "stormy" || type == "storm") {
     type = "rain";
-  } else if (type == "clear" || type == "nothing") {
+  } else if (type == "clear" || type == "nothing" || type == "") {
     type = "clear";
   } else if (type == "cloudy" || type == "clouds" || type == "overcast") {
     type = "clouds";
@@ -201,6 +201,10 @@ function getLocation(locale) {
       let stationsURL = data.properties.observationStations;
       // Call the function to get the list of weather stations
       getStationId(stationsURL);
+      let hourlyURL = data.properties.forecastHourly;
+      getHourly(hourlyURL);
+      let forecastURL = data.properties.forecast;
+      getForecast(forecastURL);
     })
     .catch(error => console.log('There was a getLocation error: ', error))
 } // end getLocation function
@@ -261,41 +265,79 @@ function getWeather(stationId) {
     .catch(error => console.log('There was a getWeather error: ', error))
 } // end getWeather function
 
+// Gets hourly information for a specific weather station from the NWS API
+function getHourly(link) {
+  // NWS User-Agent header (built above) will be the second parameter 
+  fetch(link, idHeader)
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new ERROR('Response not OK.');
+    })
+    .then(function (data) {
+      // Let's see what we got back
+      console.log('From getHourly function:');
+      console.log(data);
+
+      let hourly = [];
+      for(var i = 0; i<13; i++){
+        hourly[i] = data.properties.periods[i].temperature;
+      }
+      storage.setItem("hourly", hourly);
+    })
+    .catch(error => console.log('There was a getHourly error: ', error))
+} // end getHourly function
+
+// Gets current weather forecast for a specific weather station from the NWS API
+function getForecast(link) {
+  // NWS User-Agent header (built above) will be the second parameter 
+  fetch(link, idHeader)
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new ERROR('Response not OK.');
+    })
+    .then(function (data) {
+      // Let's see what we got back
+      console.log('From getForecast function:');
+      console.log(data);
+      
+      storage.setItem("high", data.properties.periods[0].temperature);
+      storage.setItem("low", data.properties.periods[1].temperature);
+    })
+    .catch(error => console.log('There was a getForecast error: ', error))
+} // end getForecast function
+
 // Populate the current location weather page
 function buildPage(c, data) {
   // Task 1 - Feed data to WC, Dial, Image, Meters to feet and hourly temps functions
-  buildWC(c.windSpeed.value, c.temperature.value);
-  windDial(c.windDirection.value);
-  changeSummaryImage(getCondition(c.textDescription));
-  document.getElementById('elevation').innerHTML = convertMeters(c.elevation.value);
+  storage.setItem("temp", celsiusToFarenheit(c.temperature.value));
+  buildWC(c.windSpeed.value, storage.getItem("temp"));
+  storage.setItem("direction", c.windDirection.value);
+  windDial(storage.getItem("direction"));
+  storage.setItem("summary", getCondition(c.textDescription))
+  changeSummaryImage(storage.getItem("summary"));
+  storage.setItem("elevation", convertMeters(c.elevation.value));
+  document.getElementById('elevation').innerHTML = storage.getItem("elevation");
   //buildHourlyData(nextHour, hourlyTemps);
 
   // Task 2 - Populate location information
   document.getElementById('zip');
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      document.getElementById('latitude').innerHTML = convertMeters(position.coords.latitude);
-      document.getElementById('longitude').innerHTML = convertMeters(position.coords.longitude);
-    })
-  }
+  document.getElementById('latitude').innerHTML = convertMeters(storage.getItem("lat"));
+  document.getElementById('longitude').innerHTML = convertMeters(storage.getItem("long"));
 
   // Task 3 - Populate weather information
   document.getElementById('page-title').innerHTML = storage.locName + ", " + storage.locState + " | Weather Site";
   document.getElementById('content-heading').innerHTML = storage.locName + ", " + storage.locState;
-  document.getElementById('deg').innerHTML = celsiusToFarenheit(c.temperature.value) + "&deg;F";
-  if (celsiusToFarenheit(c.maxTemperatureLast24Hours.value) > celsiusToFarenheit(c.temperature.value)) {
-    document.getElementById('high').innerHTML = celsiusToFarenheit(c.maxTemperatureLast24Hours.value) + "&deg;F";
-  } else {
-    document.getElementById('high').innerHTML = celsiusToFarenheit(c.temperature.value) + "&deg;F";
-  }
-  if (celsiusToFarenheit(c.minTemperatureLast24Hours.value) > celsiusToFarenheit(c.temperature.value)) {
-    document.getElementById('low').innerHTML = celsiusToFarenheit(c.minTemperatureLast24Hours.value) + "&deg;F";
-  } else {
-    document.getElementById('low').innerHTML = celsiusToFarenheit(c.temperature.value) + "&deg;F";
-  }
-  document.getElementById('mph').innerHTML = metersToMiles(c.windSpeed.value) + " mph";
+  document.getElementById('deg').innerHTML = storage.getItem("temp") + "&deg;F";
+  document.getElementById('high').innerHTML = storage.getItem("high") + "&deg;F";
+  document.getElementById('low').innerHTML = storage.getItem("low") + "&deg;F";
+  storage.setItem("mph", metersToMiles(c.windSpeed.value));
+  document.getElementById('mph').innerHTML = storage.getItem("mph") + " mph";
   document.getElementById('gusts').innerHTML = (c.windGust.value) ^ "None";
-  document.getElementById('weather').innerHTML = c.textDescription;
+  document.getElementById('weather').innerHTML = storage.getItem("summary");
 
   // Task 4 - Hide status and show main
   document.getElementById('main-content').setAttribute('class', '');

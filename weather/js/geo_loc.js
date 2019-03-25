@@ -23,10 +23,13 @@ function getGeoLocation() {
         navigator.geolocation.getCurrentPosition(function (position) {
             const lat = position.coords.latitude;
             const long = position.coords.longitude;
+            storage.setItem("lat", lat);
+            storage.setItem("long", long);
 
             // Combine the values
             const locale = lat + "," + long;
             console.log(`Lat and Long are: ${locale}.`);
+
             // Call getLocation function, send locale
             getLocation(locale);
 

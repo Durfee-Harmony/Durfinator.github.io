@@ -321,10 +321,12 @@ function buildPage(c, data) {
   changeSummaryImage(storage.getItem("summary"));
   storage.setItem("elevation", convertMeters(c.elevation.value));
   document.getElementById('elevation').innerHTML = storage.getItem("elevation");
-  //buildHourlyData(nextHour, hourlyTemps);
+  let date = new Date();
+  let nextHour = date.getHours() + 1;
+  document.getElementById("hourly-list").innerHTML = buildHourlyData(nextHour, storage.getItem("hourly").split(','));
 
   // Task 2 - Populate location information
-  document.getElementById('zip');
+  //document.getElementById('zip');
   document.getElementById('latitude').innerHTML = convertMeters(storage.getItem("lat"));
   document.getElementById('longitude').innerHTML = convertMeters(storage.getItem("long"));
 
@@ -337,6 +339,10 @@ function buildPage(c, data) {
   storage.setItem("mph", metersToMiles(c.windSpeed.value));
   document.getElementById('mph').innerHTML = storage.getItem("mph") + " mph";
   document.getElementById('gusts').innerHTML = (c.windGust.value) ^ "None";
+  let word = storage.getItem('summary');
+  word[0] = word[0].toUpperCase();
+  storage.removeItem('summary');
+  storage.setItem('summary', word);
   document.getElementById('weather').innerHTML = storage.getItem("summary");
 
   // Task 4 - Hide status and show main

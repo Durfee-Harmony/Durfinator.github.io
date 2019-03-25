@@ -327,6 +327,12 @@ function buildPage(c, data) {
 
   // Task 2 - Populate location information
   //document.getElementById('zip');
+  let lat = storage.getItem("lat");
+  lat = Math.floor(lat * 100)/100;
+  storage.setItem('lat', lat);
+  let long = storage.getItem("long");
+  long = Math.floor(long * 100) / 100;
+  storage.setItem('long', long);
   document.getElementById('latitude').innerHTML = storage.getItem("lat");
   document.getElementById('longitude').innerHTML = storage.getItem("long");
 

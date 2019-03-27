@@ -1,0 +1,93 @@
+/*
+- Imports
+- General Styles
+- Links
+- Navigation
+- Main Content
+- Footer
+*/
+
+/*Imports*/
+@import url('https://fonts.googleapis.com/css?family=Acme|Ubuntu');
+
+/*End of Imports*/
+/*General Styles*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Acme', sans-serif;
+}
+
+p {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+html {
+  background-image: url('../images/site/background.jpg');
+  background-size: cover;
+}
+
+body {
+  background-color: white;
+  margin-top: 0;
+}
+
+header {
+  margin-left: 5px;
+}
+
+/*End of General Styles*/
+/* Links*/
+a:link a:visited {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover a:active {
+  background-color: #DE2226;
+}
+
+/*End of Links*/
+/*Navigation Styles*/
+nav {
+  display: flex;
+  justify-content: left;
+  bottom: 0;
+  left: 0;
+  background-color: #DE2226;
+  width: 100%;
+}
+
+nav a {
+  list-style: none;
+  text-decoration: none;
+  padding: 15px 15px;
+  text-align: center;
+  color: white;
+  background-color: #DE2226;
+  font-family: 'Ubunto', sans-serif;
+}
+
+/*End of Navigation Styles*/
+/*Main Content Styles*/
+main {
+  margin-left: 5px;
+}
+/*End of Main Content Styles*/
+/*Footer Styles*/
+hr {
+  background-color: black;
+  height: 3px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+footer p {
+  text-align: center;
+}
+
+/*End of Footer Styles*/

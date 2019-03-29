@@ -71,6 +71,9 @@ nav a {
   background-color: #DE2226;
   font-family: 'Ubunto', sans-serif;
 }
+li {
+  list-style: none;
+}
 
 /*End of Navigation Styles*/
 /*Main Content Styles*/

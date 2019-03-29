@@ -65,14 +65,25 @@ nav {
 nav a {
   list-style: none;
   text-decoration: none;
-  padding: 15px 15px;
+  padding: 15px 5px 15px 5px;
   text-align: center;
   color: white;
   background-color: #DE2226;
   font-family: 'Ubunto', sans-serif;
 }
+
+ul {
+  margin-left: -40px;
+}
+
 li {
   list-style: none;
+  text-decoration: none;
+  padding: 15px 5px 15px 5px;
+  text-align: center;
+  color: white;
+  background-color: #DE2226;
+  font-family: 'Ubunto', sans-serif;
 }
 
 /*End of Navigation Styles*/

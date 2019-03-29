@@ -2,7 +2,7 @@
 const s = localStorage;
 
 //Fetching the JSON data
-let json = 'https://durfinator.github.io/acme/js/acme.json';
+let json = '/acme/js/acme.json';
 // fetchData('Anvils', json);
 // fetchData('Explosives', json);
 // function fetchData(page, json) {
@@ -33,6 +33,7 @@ let json = 'https://durfinator.github.io/acme/js/acme.json';
 //Function to build the navigation
 buildNav(json);
 function buildNav(json) {
+  console.log(json);
   let nav = document.getElementById('page-nav');
   // Build the remaining list items using a for loop
   fetch(json)
@@ -48,7 +49,7 @@ function buildNav(json) {
       console.log(d);
       nav.innerHTML += '<li><a href="#" title="Home">Home</a></li>';
       for (let i = 1; i < 5; i++) {
-        nav.innerHTML += '<li><a href="#" title="' + d.i + '">' + d.i + '</a></li>';
+        nav.innerHTML += '<li><a href="#" title="' + d[i] + '">' + d[i] + '</a></li>';
       }
     })
     .catch(function (error) {

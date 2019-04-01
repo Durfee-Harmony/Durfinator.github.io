@@ -1,8 +1,7 @@
 /*
 - Imports
 - General Styles
-- Links
-- Navigation
+- Links Navigation and Lists
 - Main Content
 - Footer
 */
@@ -40,7 +39,7 @@ header {
 }
 
 /*End of General Styles*/
-/* Links*/
+/* Links Navigation and Lists Styles*/
 a:link a:visited {
   text-align: center;
   text-decoration: none;
@@ -51,8 +50,6 @@ a:hover a:active {
   background-color: #DE2226;
 }
 
-/*End of Links*/
-/*Navigation Styles*/
 nav {
   display: flex;
   justify-content: left;
@@ -86,7 +83,7 @@ li {
   font-family: 'Ubunto', sans-serif;
 }
 
-/*End of Navigation Styles*/
+/*End of Links Navigation and Lists Styles*/
 /*Main Content Styles*/
 main {
   margin-left: 5px;

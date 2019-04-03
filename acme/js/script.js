@@ -1,5 +1,6 @@
 //General variables and calling functions
 const s = localStorage;
+const title = document.getElementById('content-title');
 
 //Fetching the JSON data
 let json = '/acme/js/acme.json';
@@ -47,12 +48,32 @@ function buildNav(json) {
       console.log(data);
       let d = data['Titles'];
       console.log(d);
-      nav.innerHTML += '<li><a href="#" title="Home">Home</a></li>';
+      nav.innerHTML += '<li><a onclick="home()" title="Home">Home</a></li>';
       for (let i = 1; i < 5; i++) {
-        nav.innerHTML += '<li><a href="#" title="' + d[i] + '">' + d[i] + '</a></li>';
+        nav.innerHTML += '<li><a onclick="' + d[i] + '()" title="' + d[i] + '">' + d[i] + '</a></li>';
       }
     })
     .catch(function (error) {
       console.log('There was a fetch problem: ', error.message);
     })
+}
+
+function home() {
+  title.innerHTML = 'Welcome to Acme!';
+}
+
+function Anvils() {
+  title.innerHTML = 'Anvils';
+}
+
+function Explosives() {
+  title.innerHTML = 'Explosives'
+}
+
+function Decoys() {
+  title.innerHTML = 'Decoys';
+}
+
+function Traps() {
+  title.innerHTML = 'Traps';
 }

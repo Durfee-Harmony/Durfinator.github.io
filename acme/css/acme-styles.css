@@ -69,18 +69,22 @@ nav a {
   font-family: 'Ubunto', sans-serif;
 }
 
-ul {
+ul#nav {
   margin-left: -40px;
 }
 
 li {
-  list-style: none;
+  list-style-type: none;
   text-decoration: none;
   padding: 15px 5px 15px 5px;
   text-align: center;
   color: white;
   background-color: #DE2226;
   font-family: 'Ubunto', sans-serif;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 /*End of Links Navigation and Lists Styles*/

@@ -96,24 +96,106 @@ main {
 #content-title {
   margin: 0;
 }
+
 /*End of Main Content Styles*/
-/*Home page styles*/
+/*Home Page Styles*/
+/*Banner Styles*/
 #banner {
   color: #DE2226;
   background-image: URL('../images/site/feature.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #banner div {
-  text-align-last: right;
   margin-right: 5px;
 }
-#banner h2 {
+
+#banner h2,
+#banner h3 {
+  margin-top: 0;
   margin-bottom: 0;
 }
-/*End of Home page styles*/
+
+#banner p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+#banner button {
+  background-color: #f8f294;
+  border: 1px solid #fadf50;
+  border-radius: 4px;
+  padding: 10px 27%;
+  font-family: 'Ubunto', sans-serif;
+}
+
+/*End of Banner Styles*/
+/*Main: Reviews and Recipes Styles*/
+#main {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+}
+
+#main section h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  grid-area: 1/1/2/3;
+  justify-self: left
+}
+
+#main #recipes {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+#main #recipes img {
+  max-width: 65px;
+}
+
+#main #recipes #bbq {
+  grid-area: 2/1/3/2;
+  display: flex;
+  flex-direction: column;
+}
+#main #recipes div div {
+  background-color: lightgray;
+  align-self: center;
+  background-position: right left;
+}
+
+#main #recipes #potpie {
+  grid-area: 2/2/3/3;
+  display: flex;
+  flex-direction: column;
+}
+#main #recipes #soup {
+  grid-area: 3/1/4/2;
+  display: flex;
+  flex-direction: column;
+}
+#main #recipes #taco {
+  grid-area: 3/2/4/3;
+  display: flex;
+  flex-direction: column;
+}
+
+#reviews li {
+  list-style-type: disc;
+  text-decoration: black;
+  color: black;
+  background-color: white;
+  padding: 0;
+  text-align-last: left;
+  margin-right: 1em;
+}
+
+/*End of Main: Reviews and Recipes Styles*/
+/*End of Home Page Styles*/
 /*Footer Styles*/
 hr {
   background-color: black;
@@ -124,6 +206,7 @@ hr {
 
 footer p {
   text-align: center;
+  margin: 0;
 }
 
 /*End of Footer Styles*/

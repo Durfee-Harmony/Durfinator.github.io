@@ -92,7 +92,28 @@ a:hover {
 main {
   margin-left: 5px;
 }
+
+#content-title {
+  margin: 0;
+}
 /*End of Main Content Styles*/
+/*Home page styles*/
+#banner {
+  color: #DE2226;
+  background-image: URL('../images/site/feature.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+#banner div {
+  text-align-last: right;
+  margin-right: 5px;
+}
+#banner h2 {
+  margin-bottom: 0;
+}
+/*End of Home page styles*/
 /*Footer Styles*/
 hr {
   background-color: black;

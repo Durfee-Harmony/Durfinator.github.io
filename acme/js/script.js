@@ -1,41 +1,20 @@
 //General variables and calling functions
 const s = localStorage;
+const nav = document.getElementById('page-nav');
 const title = document.getElementById('content-title');
+const img = document.getElementById('img');
+const desc = document.getElementById('desc');
+const manu = document.getElementById('manu');
+const rev = document.getElementById('rev');
+const price = document.getElementById('price');
 
 //Fetching the JSON data
-let json = '/acme/js/acme.json';
-// fetchData('Anvils', json);
-// fetchData('Explosives', json);
-// function fetchData(page, json) {
-//   fetch(json)
-//     .then(function (response) {
-//       if (response.ok) {
-//         return response.json();
-//       }
-//       throw new ERROR('Network response was not OK.');
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//       let d = data[page];
-//       s.setItem('name', d.Name);
-//       s.setItem('path', d.Path);
-//       s.setItem('description', d.Description);
-//       s.setItem('manufacturer', d.Manufacturer);
-//       s.setItem('price', d.Price);
-//       s.setItem('reviews', d.Reviews);
-//       console.log(d);
-//     })
-//     .catch(function (error) {
-//       console.log('There was a fetch problem: ', error.message);
-//       statusContainer.innerHTML = 'Sorry, the data could not be processed.';
-//     })
-// }
+const json = '/acme/js/acme.json';
 
 //Function to build the navigation
 buildNav(json);
 function buildNav(json) {
   console.log(json);
-  let nav = document.getElementById('page-nav');
   // Build the remaining list items using a for loop
   fetch(json)
     .then(function (response) {
@@ -60,20 +39,57 @@ function buildNav(json) {
 
 function home() {
   title.innerHTML = 'Welcome to Acme!';
+  document.getElementById('home').setAttribute('class', '');
+  document.getElementById('basic').setAttribute('class', 'hide');
 }
 
 function Anvils() {
   title.innerHTML = 'Anvils';
+  document.getElementById('home').setAttribute('class', 'hide');
+  document.getElementById('basic').setAttribute('class', '');
+  buildPage(json, "Anvils");
 }
 
 function Explosives() {
-  title.innerHTML = 'Explosives'
+  title.innerHTML = 'Explosives';
+  document.getElementById('home').setAttribute('class', 'hide');
+  document.getElementById('basic').setAttribute('class', '');
+  buildPage(json, "Explosives");
 }
 
 function Decoys() {
   title.innerHTML = 'Decoys';
+  document.getElementById('home').setAttribute('class', 'hide');
+  document.getElementById('basic').setAttribute('class', '');
+  buildPage(json, "Decoys");
 }
 
 function Traps() {
   title.innerHTML = 'Traps';
+  document.getElementById('home').setAttribute('class', 'hide');
+  document.getElementById('basic').setAttribute('class', '');
+  buildPage(json, "Traps");
+}
+
+function buildPage(json, page) {
+  fetch(json)
+    .then(function (response) {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new ERROR('Network response was not OK.');
+    })
+    .then(function (data) {
+      console.log(data);
+      let d = data[page];
+      console.log(d);
+      img.innerHTML = '<img src="' + d['path'] + '" alt="image of ' + page + '">';
+      desc.innerHTML = d['description'];
+      manu.innerHTML += d['manufacturer'];
+      rev.innerHTML += d['reviews'] + ' stars';
+      price.innerHTML += d['price'];
+    })
+    .catch(function (error) {
+      console.log('There was a fetch problem: ', error.message);
+    })
 }

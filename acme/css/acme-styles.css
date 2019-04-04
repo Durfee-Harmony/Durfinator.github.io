@@ -41,7 +41,6 @@ header {
 .hide {
   display: none;
 }
-
 /*End of General Styles*/
 /* Links Navigation and Lists Styles*/
 a:link a:visited {
@@ -196,6 +195,30 @@ main {
 
 /*End of Main: Reviews and Recipes Styles*/
 /*End of Home Page Styles*/
+/*Basic Page Styles*/
+#basic {
+  display: flex;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#words {
+  margin-left: 1em;
+}
+
+#manu {
+  margin-bottom: 0;
+}
+
+#rev {
+  margin-top: 0;
+}
+
+#price {
+  color: #DE2226;
+  font-size: 34px;
+}
+/*End of Basic Page Styles*/
 /*Footer Styles*/
 hr {
   background-color: black;

@@ -47,28 +47,28 @@ function Anvils() {
   title.innerHTML = 'Anvils';
   document.getElementById('home').setAttribute('class', 'hide');
   document.getElementById('basic').setAttribute('class', '');
-  buildPage(json, "Anvils");
+  buildPage(json, 'Anvils');
 }
 
 function Explosives() {
   title.innerHTML = 'Explosives';
   document.getElementById('home').setAttribute('class', 'hide');
   document.getElementById('basic').setAttribute('class', '');
-  buildPage(json, "Explosives");
+  buildPage(json, 'Explosives');
 }
 
 function Decoys() {
   title.innerHTML = 'Decoys';
   document.getElementById('home').setAttribute('class', 'hide');
   document.getElementById('basic').setAttribute('class', '');
-  buildPage(json, "Decoys");
+  buildPage(json, 'Decoys');
 }
 
 function Traps() {
   title.innerHTML = 'Traps';
   document.getElementById('home').setAttribute('class', 'hide');
   document.getElementById('basic').setAttribute('class', '');
-  buildPage(json, "Traps");
+  buildPage(json, 'Traps');
 }
 
 function buildPage(json, page) {
@@ -83,11 +83,12 @@ function buildPage(json, page) {
       console.log(data);
       let d = data[page];
       console.log(d);
+      title.innerHTML = d['name'];
       img.innerHTML = '<img src="' + d['path'] + '" alt="image of ' + page + '">';
       desc.innerHTML = d['description'];
-      manu.innerHTML += d['manufacturer'];
-      rev.innerHTML += d['reviews'] + ' stars';
-      price.innerHTML += d['price'];
+      manu.innerHTML = '<strong>Made by: </strong>' + d['manufacturer '];
+      rev.innerHTML = '<strong>Reviews: </strong>' + d['reviews '] + 'stars ';
+      price.innerHTML = 'Price: $' + d['price'];
     })
     .catch(function (error) {
       console.log('There was a fetch problem: ', error.message);

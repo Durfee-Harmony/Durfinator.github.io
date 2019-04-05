@@ -6,6 +6,8 @@
 - Home Page
 - Basic Page
 - Footer
+- Small Screen
+- Large Screen
 */
 
 /*Imports*/
@@ -43,6 +45,7 @@ header {
 body main .hide {
   display: none;
 }
+
 /*End of General Styles*/
 /* Links Navigation and Lists Styles*/
 a:link a:visited {
@@ -171,6 +174,7 @@ main {
   color: #DE2226;
   font-size: 34px;
 }
+
 /*End of Basic Page Styles*/
 /*Footer Styles*/
 hr {
@@ -239,7 +243,12 @@ footer p {
     display: flex;
     flex-direction: column;
   }
+
+  #basic #img img {
+    max-width: 100%;
+  }
 }
+
 /*End of Small Screen Styles*/
 
 /*Large Screen Styles*/
@@ -292,4 +301,5 @@ footer p {
     flex-direction: column;
   }
 }
+
 /*End of Large Screen Styles*/

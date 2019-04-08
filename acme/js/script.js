@@ -2,6 +2,7 @@
 const s = localStorage;
 const nav = document.getElementById('page-nav');
 const title = document.getElementById('content-title');
+const t = document.getElementById('page-title');
 const img = document.getElementById('img');
 const desc = document.getElementById('desc');
 const manu = document.getElementById('manu');
@@ -39,29 +40,34 @@ function buildNav(json) {
 
 function home() {
   title.innerHTML = 'Welcome to Acme!';
+  t.innerHTML = 'Home | Acme Inc.';
   document.getElementById('home').setAttribute('class', "");
   document.getElementById('basic').setAttribute('class', "hide");
 }
 
 function Anvils() {
+  t.innerHTML = 'Anvils | Acme Inc.';
   document.getElementById('home').setAttribute('class', 'hide');
   document.getElementById('basic').setAttribute('class', 'basic');
   buildPage(json, 'Anvils');
 }
 
 function Explosives() {
+  t.innerHTML = 'Explosives | Acme Inc.';
   document.getElementById('home').setAttribute('class', 'hide');
   document.getElementById('basic').setAttribute('class', 'basic');
   buildPage(json, 'Explosives');
 }
 
 function Decoys() {
+  t.innerHTML = 'Decoys | Acme Inc.';
   document.getElementById('home').setAttribute('class', 'hide');
   document.getElementById('basic').setAttribute('class', 'basic');
   buildPage(json, 'Decoys');
 }
 
 function Traps() {
+  t.innerHTML = 'Traps | Acme Inc.';
   document.getElementById('home').setAttribute('class', 'hide');
   document.getElementById('basic').setAttribute('class', 'basic');
   buildPage(json, 'Traps');

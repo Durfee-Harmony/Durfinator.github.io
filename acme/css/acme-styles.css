@@ -137,14 +137,6 @@ main {
   margin-bottom: 5px;
 }
 
-#banner button {
-  background-color: #f8f294;
-  border: 1px solid #fadf50;
-  border-radius: 4px;
-  padding: 10px 27%;
-  font-family: 'Ubunto', sans-serif;
-}
-
 #review li {
   list-style-type: disc;
   text-decoration: black;

@@ -1,0 +1,27 @@
+/*Imports*/
+@import url('https://fonts.googleapis.com/css?family=Laila|Poppins');
+
+
+
+
+/*General Styles*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Laila', serif;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  padding: 1em;
+}
+
+#cit230 {
+  display: flex;
+  flex-flow: wrap;
+}
+
+/*End of General Styles*/

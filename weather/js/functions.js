@@ -96,7 +96,7 @@ function getCondition(type) {
     type = "rain";
   } else if (type == "clear" || type == "nothing" || type == "") {
     type = "clear";
-  } else if (type == "cloudy" || type == "clouds" || type == "overcast") {
+  } else if (type == "cloudy" || type == "clouds" || type == "overcast" || type == "slightly cloudy") {
     type = "clouds";
   } else if (type == "fog" || type == "foggy" || type == "hazy") {
     type = "fog";
